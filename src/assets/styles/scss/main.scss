@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+// bower:scss
+@import "bower_components/bootstrap/scss/bootstrap.scss";
+@import "bower_components/font-awesome-4.7.0/scss/font-awesome.scss";
+// endbower
+@import 'base';
+@import 'header';
+@import 'content';
+@import 'footer';
+@import 'details';

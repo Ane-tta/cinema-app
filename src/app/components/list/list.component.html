@@ -1,0 +1,50 @@
+<app-header></app-header>
+ <main>
+  <div class="container main-container">
+    <div class="section-header">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1 class="title"><i class="fa fa-film" aria-hidden="true"></i>Movies</h1>
+        </div>
+        <div class="col-sm-6 extra-features">
+          <div class="movies-genre">
+            <span>Choose a genre<i class="fa fa-angle-down" aria-hidden="true"></i></span>
+            <ul class="list">
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>action</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>adventure</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>biography</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>comedy</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>crime</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>drama</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>history</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>mystery</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>scifi</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>sport</li>
+              <li><i class="fa fa-angle-right" aria-hidden="true"></i>thriller</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--section-header-->
+    <div (searchChange)="onSearch($event)" class="row">
+      <div *ngFor="let movie of movieList" [routerLink]="['/movie', movie.id]" class="col-md-2 col-sm-4 col-xs-6 col-lg-2">
+        <div class="movie-item">
+          <div class="movie-poster">
+            <img src="./assets/images/movie-covers/{{movie.img}}" alt="">
+          </div>
+        </div>
+        <div class="movie-info">
+          <div class="movie-movie-title">{{movie.name}}</div>
+          <div class="details">
+            <span class="rate">Rate: {{movie.rate}}</span>
+            <span class="length">{{movie.length}}</span>
+          </div>
+        </div>
+      </div>
+      <!--item-->
+
+
+    </div>
+  </div>
+</main>
