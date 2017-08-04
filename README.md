@@ -1,5 +1,5 @@
-# About
-Angular 4 web app for searching through the list of movies and also to discover more details about the selected movie.
+# Description
+Angular 4 web app for searching through the list of movies and also to discover more details about the selected movie. Just push a button to find  your movie in the list or just filter the list by a category. Enjoy! :)
 
 ### WebApp Demo
 https://ane-tta.github.io/cinema-app/
