@@ -6,7 +6,7 @@ https://ane-tta.github.io/cinema-app/
 
 # Before to start
 You can get a complete copy by running command
-git clone https://github.com/Ane-tta/cinema-app.git
+`git clone https://github.com/Ane-tta/cinema-app.git`
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
