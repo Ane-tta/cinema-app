@@ -16,7 +16,7 @@ Don't forget to run `npm install` to install npm packages.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Code scaffolding
 
