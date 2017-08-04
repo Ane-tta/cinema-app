@@ -4,7 +4,9 @@ Angular 4 web app for searching through the list of movies and also to discover 
 ### WebApp Demo
 https://ane-tta.github.io/cinema-app/
 
-# AppV4
+# Before to start
+You can get a complete copy by running command
+git clone https://github.com/Ane-tta/cinema-app.git
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
