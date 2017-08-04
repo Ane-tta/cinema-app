@@ -10,6 +10,10 @@ You can get a complete copy by running command
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
+## Tip
+
+Don't forget to run `npm install` to install npm packages.
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
