@@ -42,6 +42,10 @@ main {
   display: inline-block;
   font-size: 14px;
   height: 24px;
+  .selected {
+    color: $black;
+    background-color: $grey;
+  }
   &>span {
     cursor: pointer;
     color: $dgrey;
@@ -65,15 +69,15 @@ main {
     opacity: 0;
     visibility: hidden;
     color: $dgrey;
-    padding-top: 5px;
     font-size: 13px;
     border-top: 1px dotted $grey;
     border-bottom: 1px dotted $grey;
+    box-shadow: 0px 0px 2px 1px rgba(234, 234, 234, 0.63);
     li {
       text-transform: uppercase;
       transition: $timer;
       cursor: pointer;
-      padding: 0 10px 5px 5px;
+      padding: 3px 10px 3px 8px;
       border-bottom: 1px dotted $grey;
       position: relative;
       &:last-child {
@@ -101,6 +105,10 @@ main {
   }
 }
 
+.movie-box {
+  cursor: pointer;
+}
+
 //movie item
 .movie-item {
   position: relative;
@@ -120,8 +128,8 @@ main {
 .movie-poster {
   &:after {
     content: '';
-    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000 100%);
-    -webkit-background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, #000 100%);
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5) 100%);
+    -webkit-background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, .5) 100%);
     position: absolute;
     top: 0;
     bottom: 0;

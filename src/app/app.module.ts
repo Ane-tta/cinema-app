@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutes } from './app.routing';
 
@@ -14,6 +15,14 @@ import { DetailsComponent } from './components/details/details.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ListComponent } from './components/list/list.component';
+import { SearchPipe } from './pipes/search.pipe';
+import { GenrePipe } from './pipes/genre.pipe';
+import { HeaderNoSearchComponent } from './components/header-no-search/header-no-search.component';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreModule } from '@ngrx/store';
+import { movieList } from './reducers/app.reducer';
+import { HeroAreaComponent } from './components/hero-area/hero-area.component';
+import { SearchBarComponent } from './components/search-bar/search-bar.component';
 
 @NgModule({
   declarations: [
@@ -21,12 +30,21 @@ import { ListComponent } from './components/list/list.component';
     DetailsComponent,
     HeaderComponent,
     FooterComponent,
-    ListComponent
+    ListComponent,
+    SearchPipe,
+    GenrePipe,
+    HeaderNoSearchComponent,
+    HeroAreaComponent,
+    SearchBarComponent
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
+    StoreModule.forRoot({
+      movieList
+    }),
     RouterModule.forRoot(
       AppRoutes
     )

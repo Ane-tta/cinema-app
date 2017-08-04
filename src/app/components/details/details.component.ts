@@ -1,8 +1,12 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { MainService } from '../../services/main.service';
-import { ActivatedRoute, ParamMap, Router }
+import { ActivatedRoute, ParamMap }
 from '@angular/router';
-import { Location } from '@angular/common';
+import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/takeUntil';
+import { Subject } from 'rxjs/Subject';
+import { Store } from '@ngrx/store';
+import { AppStore } from '../../app.store';
 
 @Component({
   selector: 'app-details',
@@ -11,31 +15,33 @@ import { Location } from '@angular/common';
 })
 export class DetailsComponent implements OnInit, OnDestroy {
 
+  public pageIsReady = false;
   public movie;
-  private movieParams;
-  private paramsDetails;
-
+  
+  private ngUnsubscribe: Subject<void> = new Subject<void>();
+  
   constructor(
    private service: MainService,
    private route: ActivatedRoute,
-   private router: Router,
-   private location: Location
+   private store: Store<AppStore>
   ) { }
 
   ngOnInit() {
-    this.movieParams = this.route.paramMap.subscribe(details => {
-      this.paramsDetails = details; this.getMovieDetails(+this.paramsDetails.params['id']);
-    });
+    this.route.paramMap
+        .switchMap((params: ParamMap) => 
+          this.service.getMovie(+params.get('id'))
+        )
+        .takeUntil(this.ngUnsubscribe)
+        .subscribe(movie => {
+          this.movie = movie;
+          this.pageIsReady = true;
+          this.store.dispatch({type: 'SEE_A_MOVIE'});
+        });
   }
-
+  
   ngOnDestroy(){
-    this.movieParams.unsubscribe();
-  }
-
-  getMovieDetails(id){
-    this.service.getMovie(+this.paramsDetails.params['id']).subscribe(res => {
-        console.log('res', res);
-      });
+    this.ngUnsubscribe.next();
+    this.ngUnsubscribe.complete();
   }
 
 }

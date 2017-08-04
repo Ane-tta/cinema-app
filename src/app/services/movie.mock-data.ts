@@ -240,5 +240,16 @@ export const MOVIES: any[] = [
     rate: "6.8",
     length: "1hr 59mins",
     img: "bad-boys.jpg"
+  },
+  {
+    id: 24,
+    key: "spider-man",
+    name: "Spider-Man: Homecoming",
+    description: "Peter Parker, with the help of his mentor Tony Stark, tries to balance his life as an ordinary high school student in New York City while fighting crime as his superhero alter ego Spider-Man when a new threat emerges.",
+    genres: [genreType.action, genreType.adventure, genreType.comedy],
+    rate: "7.9",
+    length: "1hr 48mins",
+    img: "spider-man.jpg",
+    tagline: "HOMEWORK CAN WAIT. THE CITY CAN'T."
   }
 ];

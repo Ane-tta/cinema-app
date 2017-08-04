@@ -1,3 +1,38 @@
-<p>
-  details works!
-</p>
+<app-header-no-search></app-header-no-search>
+<main>
+  <div *ngIf="pageIsReady" class="container details-container">
+    <div class="row">
+      <div class="col-12">
+        <h1 class="title">{{movie.name}}</h1>
+      </div>
+      <div class="col-md-9">
+        <div class="row">
+          <div class="col-sm-6 col-md-4">
+            <img class="details-poster" src="./assets/images/movie-covers/{{movie.img}}" alt="">
+          </div>
+          <div class="col-sm-6 col-md-8">
+            <div class="details-info">
+              <ul>
+                <li><strong>Rating:</strong> {{movie.rate}}</li>
+                <li><strong>Length:</strong> {{movie.length}}</li>
+              </ul>
+
+            </div>
+            <div class="details-content">
+              <p>{{movie.description}}</p>
+            </div>
+
+            <div class="details-genres">
+              <span *ngFor="let genre of movie.genres" class="genre">
+             {{genre}}
+           </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div routerLink="/" class="btn btn-regular">Back to list <i class="fa fa-angle-double-right" aria-hidden="true"></i></div>
+      </div>
+    </div>
+  </div>
+</main>
